@@ -11,10 +11,14 @@ const dispatch = useDispatch();
 
   return (
     <>
-       <div className='bg-slate-400 font-bold text-left p-1 border-b-2 border' key={index}> 
+    <div className='flex justify-between place-items-center'>
+
+    <div className='bg-slate-400 font-bold text-left p-1 border-b-2 border' key={index}> 
            <p>{item}</p> 
            <button onClick={handledelete}>delete</button>
            </div>
+    </div>
+     
     </>
   )
 }
