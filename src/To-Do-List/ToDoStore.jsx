@@ -3,7 +3,9 @@ import React from 'react'
 import todoslice from "./ToDoSlice"
 
 const ToDoStore = configureStore({
-    reducer : todoslice,
+    reducer :{
+        todo:todoslice,
+    },
 })
 
 export default ToDoStore
