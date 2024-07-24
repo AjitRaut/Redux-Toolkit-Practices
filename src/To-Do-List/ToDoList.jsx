@@ -7,8 +7,8 @@ const ToDoList = () => {
     <>
       <div className='h-5 max-w-full'>
         {todos.map((todo , index)=>(
-          <div key={index}> 
-           {todo}
+          <div className='bg-slate-400 font-bold text-left p-1 border-b-2 border' key={index}> 
+          <p>{todo}</p> 
           </div>
         ))}
       </div>
