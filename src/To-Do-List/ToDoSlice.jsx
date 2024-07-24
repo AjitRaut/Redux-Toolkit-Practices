@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import React from "react";
 
+
 const ToDoSlice = createSlice({
   name: "To-Do-List",
   initialState: {
@@ -10,8 +11,8 @@ const ToDoSlice = createSlice({
     Add_Todo: (state , action) => {
       state.todos.push(action.payload);
     },
-    Dlelete_Todo: (state) => {
-      state.pop(todos);
+    Dlelete_Todo: (state , action) => {
+      state.todos = state.todos.filter((_, index) => index !== action.payload);
     },
   },
 });
