@@ -6,7 +6,7 @@ const ToDoList = () => {
   const todos = useSelector((store)=>store.todo.todos)
   return (
     <>
-      <div className='h-5 max-w-full'>
+      <div className='max-w-full'>
         {todos.map((todo , index)=>(
           <ToDoItem key={index} index={index} item={todo} /> 
         

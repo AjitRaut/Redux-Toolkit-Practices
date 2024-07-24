@@ -22,10 +22,10 @@ const [input , setinput] = useState("");
    
   }
   return (
-    <div className="flex justify-around ">
+    <div className="flex justify-between ">
       <form onSubmit={handleForm}>
         <div className="border-solid border border-gray-500 rounded-sm w-full ">
-          <input value={input} onChange={(e)=>setinput(e.target.value)} className="outline-none px-2" />
+          <input value={input} onChange={(e)=>setinput(e.target.value)} className="outline-none px-2  text-lg font-semibold" placeholder="Enter Todo Here.." />
           <button className="bg-sky-700 p-2 m-2 rounded-lg text-xl  font-bold" onClick={handleTodo}>
             Add
           </button>
