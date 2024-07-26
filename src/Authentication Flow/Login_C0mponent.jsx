@@ -5,7 +5,9 @@ const Login_C0mponent = () => {
     <>
      <div>
         <h1>Login Component</h1>
-        
+        <form>
+            <input value={} />
+        </form>
         </div> 
     </>
   )
