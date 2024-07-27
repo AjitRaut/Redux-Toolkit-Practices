@@ -7,6 +7,7 @@ import ToDoStore from "./To-Do-List/ToDoStore";
 import Login_C0mponent from "./Authentication_Flow/Login_C0mponent";
 import store from "./Authentication_Flow/Authentication_Flow_Store";
 import Main from "./Authentication_Flow/Main";
+import Mock_data from "./Mock_Api/Mock_data";
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       {/* <Counter /> */}
       
       {/* <ToDoComponent /> */}
-     <Main />
+     {/* <Main /> */}
+     <Mock_data />
     </Provider>
   );
 }

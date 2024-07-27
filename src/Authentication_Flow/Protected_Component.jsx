@@ -14,7 +14,7 @@ const ProtectedComponent = () => {
 
   return (
     <div>
-      <p>{user ? `Welcome, ${user}` : 'No user logged in'}</p>
+      <p>{user ? `Welcome, ${user.username}` : 'No user logged in'}</p>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
