@@ -8,6 +8,7 @@ import Login_C0mponent from "./Authentication_Flow/Login_C0mponent";
 import store from "./Authentication_Flow/Authentication_Flow_Store";
 import Main from "./Authentication_Flow/Main";
 import Mock_data from "./Mock_Api/Mock_data";
+import PaginatedComponent from "./Pagination/Pagination_Component";
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
       
       {/* <ToDoComponent /> */}
      {/* <Main /> */}
-     <Mock_data />
+     {/* <Mock_data /> */}
+     f
+     <PaginatedComponent />
     </Provider>
   );
 }
