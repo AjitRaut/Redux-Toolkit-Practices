@@ -1,13 +1,13 @@
-// paginationSlice.js
+// src/features/pagination/paginationSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
-// Define an async thunk to fetch paginated data
 export const fetchPaginatedData = createAsyncThunk(
   'pagination/fetchPaginatedData',
-  async (page, thunkAPI) => {
-    const response = await axios.get(`https://api.example.com/data?page=${page}`);
-    return response.data;
+  async (page) => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`);
+    const totalItems = response.headers.get('x-total-count');
+    const data = await response.json();
+    return { data, totalPages: Math.ceil(totalItems / 10) };
   }
 );
 
@@ -16,7 +16,7 @@ const paginationSlice = createSlice({
   initialState: {
     data: [],
     currentPage: 1,
-    totalPages: 0,
+    totalPages: 1,
     status: 'idle',
     error: null,
   },

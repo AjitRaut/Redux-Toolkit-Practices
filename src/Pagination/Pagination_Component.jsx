@@ -1,13 +1,11 @@
-// PaginatedComponent.js
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPaginatedData, setPage } from "./Slice";
+// src/features/pagination/PaginatedComponent.js
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPaginatedData, setPage } from './Slice';
 
 const PaginatedComponent = () => {
   const dispatch = useDispatch();
-  const { data, currentPage, totalPages, status, error } = useSelector(
-    (state) => state. pagination
-  );
+  const { data, currentPage, totalPages, status, error } = useSelector((state) => state.pagination);
 
   useEffect(() => {
     dispatch(fetchPaginatedData(currentPage));
@@ -28,13 +26,13 @@ const PaginatedComponent = () => {
   return (
     <div>
       <h1>Paginated Data</h1>
-      {status === "loading" && <p>Loading...</p>}
-      {status === "failed" && <p>Error: {error}</p>}
-      {status === "succeeded" && (
+      {status === 'loading' && <p>Loading...</p>}
+      {status === 'failed' && <p>Error: {error}</p>}
+      {status === 'succeeded' && (
         <>
           <ul>
             {data.map((item) => (
-              <li key={item.id}>{item.name}</li>
+              <li key={item.id}>{item.title}</li>
             ))}
           </ul>
           <div>
@@ -44,10 +42,7 @@ const PaginatedComponent = () => {
             <span>
               Page {currentPage} of {totalPages}
             </span>
-            <button
-              onClick={handleNextPage}
-              disabled={currentPage === totalPages}
-            >
+            <button onClick={handleNextPage} disabled={currentPage === totalPages}>
               Next
             </button>
           </div>
